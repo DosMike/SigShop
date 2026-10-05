@@ -1,0 +1,74 @@
+name: Refresh TF2 gamedata
+
+on:
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/import-tf2-gamedata.mjs
+
+permissions:
+  contents: read
+
+concurrency:
+  group: refresh-tf2-gamedata
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      changed: ${{ steps.changes.outputs.changed }}
+      commit_sha: ${{ steps.commit.outputs.commit_sha }}
+    steps:
+      - name: Check out default branch
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Import upstream gamedata
+        run: npm run import:tf2
+      - name: Test generated catalog
+        run: npm run check
+      - name: Detect catalog changes
+        id: changes
+        shell: bash
+        run: |
+          if git diff --quiet -- public/data/tf2.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Commit and push catalog
+        id: commit
+        if: steps.changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/tf2.json
+          git commit -m "chore(data): refresh TF2 gamedata"
+          git push
+          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: refresh
+    if: needs.refresh.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy-pages.yml
+    with:
+      ref: ${{ needs.refresh.outputs.commit_sha }}
