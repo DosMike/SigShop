@@ -3,7 +3,7 @@
     "id": "tf",
     "title": "Team Fortress 2",
     "engine": "Source",
-    "currentVersion": 11076587,
+    "currentVersion": 11087207,
     "data": "./data/tf2.json"
   }
 ]
