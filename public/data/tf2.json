@@ -8,7 +8,7 @@
     "engine": "Source",
     "accent": "#ffb86a",
     "defaultTestedVersion": 11076587,
-    "importedAt": "2026-10-05",
+    "importedAt": "2026-10-12",
     "sourceCount": 6
   },
   "entries": [
@@ -1882,8 +1882,8 @@
         "key": "CEconItemSchema::GetAttributeDefinitionByName()",
         "library": "server",
         "values": {
-          "windows": "\\x55\\x8B\\xEC\\x83\\xEC\\x1C\\x83\\x7D\\x08\\x00",
-          "windows64": "\\x40\\x55\\x56\\x48\\x83\\xEC\\x78",
+          "windows": "\\x55\\x8B\\xEC\\x8B\\x45\\x08\\x56\\x8B\\xF1\\x57\\x85\\xC0",
+          "windows64": "\\x40\\x53\\x48\\x83\\xEC\\x20\\x48\\x8B\\xD9\\x48\\x85\\xD2\\x74\\x2A\\x48\\x81\\xC1\\x80\\x02\\x00\\x00",
           "linux": "@_ZN15CEconItemSchema28GetAttributeDefinitionByNameEPKc",
           "linux64": "@_ZN15CEconItemSchema28GetAttributeDefinitionByNameEPKc"
         }
@@ -1948,9 +1948,9 @@
         "key": "CEconItemSchema::m_AttributeMap",
         "kind": "member",
         "values": {
-          "windows": "448",
+          "windows": "484",
           "windows64": "600",
-          "linux": "448",
+          "linux": "484",
           "linux64": "600"
         }
       }
@@ -1981,10 +1981,10 @@
         "key": "CEconItemSchema::m_CosmeticUnusualEffectList",
         "kind": "member",
         "values": {
-          "windows": "908",
-          "windows64": "1224",
-          "linux": "908",
-          "linux64": "1224"
+          "windows": "944",
+          "windows64": "1272",
+          "linux": "944",
+          "linux64": "1272"
         }
       }
     },
@@ -2014,10 +2014,10 @@
         "key": "CEconItemSchema::m_EquipRegions",
         "kind": "member",
         "values": {
-          "windows": "968",
-          "windows64": "1320",
-          "linux": "968",
-          "linux64": "1320"
+          "windows": "1004",
+          "windows64": "1368",
+          "linux": "1004",
+          "linux64": "1368"
         }
       }
     },
@@ -2179,10 +2179,10 @@
         "key": "CEconItemSchema::m_mapAttributeControlledParticleSystems",
         "kind": "member",
         "values": {
-          "windows": "880",
-          "windows64": "1184",
-          "linux": "880",
-          "linux64": "1184"
+          "windows": "916",
+          "windows64": "1232",
+          "linux": "916",
+          "linux64": "1232"
         }
       }
     },
@@ -2245,8 +2245,8 @@
         "key": "CEconItemSchema::m_ParticleSystemTree",
         "kind": "member",
         "values": {
-          "windows": "876",
-          "linux": "876"
+          "windows": "912",
+          "linux": "912"
         }
       }
     },
@@ -2276,10 +2276,10 @@
         "key": "CEconItemSchema::m_TauntUnusualEffectList",
         "kind": "member",
         "values": {
-          "windows": "948",
-          "windows64": "1288",
-          "linux": "948",
-          "linux64": "1288"
+          "windows": "984",
+          "windows64": "1336",
+          "linux": "984",
+          "linux64": "1336"
         }
       }
     },
@@ -2309,10 +2309,10 @@
         "key": "CEconItemSchema::m_WeaponUnusualEffectList",
         "kind": "member",
         "values": {
-          "windows": "928",
-          "windows64": "1256",
-          "linux": "928",
-          "linux64": "1256"
+          "windows": "964",
+          "windows64": "1304",
+          "linux": "964",
+          "linux64": "1304"
         }
       }
     },
@@ -4182,7 +4182,7 @@
         "key": "CTFItemSchema::GetMasterMapDefByName()",
         "library": "server",
         "values": {
-          "windows": "\\x55\\x8B\\xEC\\x53\\x56\\x57\\x8B\\xF9\\x33\\xF6\\x39\\xB7\\x60\\x06\\x00\\x00",
+          "windows": "\\x55\\x8B\\xEC\\x53\\x56\\x57\\x8B\\xF9\\x33\\xF6\\x39\\xB7\\x84\\x06\\x00\\x00",
           "windows64": "\\x48\\x89\\x5C\\x24\\x2A\\x48\\x89\\x6C\\x24\\x2A\\x48\\x89\\x74\\x24\\x2A\\x57\\x48\\x83\\xEC\\x2A\\x33\\xDB\\x48\\x8B\\xEA\\x48\\x8B\\xF9\\x39\\x99\\x2A\\x2A\\x2A\\x2A\\x7E\\x2A\\x0F\\x1F\\x40\\x2A\\x0F\\x1F\\x84\\x00\\x2A\\x2A\\x2A\\x2A\\x48\\x8B\\x87\\x2A\\x2A\\x2A\\x2A\\x48\\x8D\\x34\\xDD\\x2A\\x2A\\x2A\\x2A\\x48\\x8B\\xD5\\x48\\x8B\\x0C\\x06\\x48\\x8B\\x49",
           "linux": "@_ZNK13CTFItemSchema21GetMasterMapDefByNameEPKc",
           "linux64": "@_ZNK13CTFItemSchema21GetMasterMapDefByNameEPKc"
@@ -4215,10 +4215,10 @@
         "key": "CTFItemSchema::m_ItemSlotNames",
         "kind": "member",
         "values": {
-          "windows": "1432",
-          "windows64": "1968",
-          "linux": "1432",
-          "linux64": "1968"
+          "windows": "1468",
+          "windows64": "2016",
+          "linux": "1468",
+          "linux64": "2016"
         }
       }
     },
